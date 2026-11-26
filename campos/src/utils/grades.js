@@ -1,28 +1,53 @@
-export function calculateRequiredGrade(
-  assessments,
-  target
-) {
-  const completed = assessments.filter(
-    a => a.grade != null
+export function calculateModuleStats(assessments) {
+  const gradedAssessments = assessments.filter(
+    (assessment) =>
+      assessment.status === "Graded" &&
+      assessment.grade !== null
   );
 
-  const earned = completed.reduce(
-    (total, a) =>
-      total + (a.grade * a.weight) / 100,
+  const totalWeight = assessments.reduce(
+    (total, assessment) =>
+      total + assessment.weight,
     0
   );
 
-  const completedWeight = completed.reduce(
-    (total, a) => total + a.weight,
+  const gradedWeight = gradedAssessments.reduce(
+    (total, assessment) =>
+      total + assessment.weight,
     0
   );
 
-  const remainingWeight = 100 - completedWeight;
-
-  if (remainingWeight <= 0) return null;
-
-  return Math.max(
-    0,
-    ((target - earned) / remainingWeight) * 100
+  const earnedPoints = gradedAssessments.reduce(
+    (total, assessment) =>
+      total +
+      (assessment.grade * assessment.weight) / 100,
+    0
   );
+
+  const currentAverage =
+    gradedWeight > 0
+      ? (earnedPoints / gradedWeight) * 100
+      : null;
+
+  const pendingCount = assessments.filter(
+    (assessment) =>
+      assessment.status === "Pending"
+  ).length;
+
+  const submittedCount = assessments.filter(
+    (assessment) =>
+      assessment.status === "Submitted"
+  ).length;
+
+  return {
+    totalAssessments: assessments.length,
+    pendingCount,
+    submittedCount,
+    gradedCount: gradedAssessments.length,
+    totalWeight,
+    gradedWeight,
+    earnedPoints,
+    currentAverage,
+    remainingWeight: Math.max(0, 100 - gradedWeight)
+  };
 }

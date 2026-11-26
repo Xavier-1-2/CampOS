@@ -726,3 +726,192 @@ button:disabled {
     font-size: 24px;
   }
 }
+
+/* FORMLAYOUT */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.section-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.section-toolbar p {
+  margin-bottom: 0;
+}
+
+.section-toolbar .primary-button {
+  flex-shrink: 0;
+}
+
+/* ASSESMENT TABLE */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.assessment-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.assessment-table th {
+  padding: 15px 16px;
+  background: var(--background);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  border-bottom: 1px solid var(--border);
+}
+
+.assessment-table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.assessment-table td:first-child {
+  white-space: normal;
+  min-width: 170px;
+}
+
+.assessment-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.assessment-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.table-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ASSESMENT STATUS BADGES */
+.status-badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-submitted {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.status-graded {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* DEADLINE INDICATORS */
+.deadline-overdue,
+.deadline-urgent {
+  display: block;
+  width: fit-content;
+  margin-top: 6px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.deadline-overdue {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.deadline-urgent {
+  background: #ffedd5;
+  color: #c2410c;
+}
+
+/* MODULE OUTLINE PROGRESS BAR */
+.outline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.outline-header strong {
+  color: var(--primary);
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.outline-header p {
+  margin-bottom: 0;
+}
+
+.progress-track {
+  width: 100%;
+  height: 10px;
+  background: #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+.progress-fill.complete {
+  background: var(--success);
+}
+
+.workspace-panel .outline-message {
+  font-size: 13px;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+/* RESPONSIVE STYLING */
+@media (max-width: 700px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .section-toolbar {
+    flex-direction: column;
+  }
+
+  .outline-header {
+    flex-direction: column;
+  }
+
+  .workspace-panel {
+    padding: 16px;
+  }
+
+  .assessment-table td,
+  .assessment-table th {
+    padding: 12px;
+  }
+}
