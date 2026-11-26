@@ -1,0 +1,10 @@
+Project Name: CampOS (It is shortened for campus operating system but can also be pronounced as campos aka "campus")
+
+Tech Stack: Frontend (ReactJs), Backend/Storage(IndexedDB)
+
+Project Description: CampOS is a university management system created for students to better organize their academic and financial activities
+
+Features
+- Module Managment: storing and managing modules and assesments
+- What-If Calculator: Calculates how much percentage you need to get a certain grade
+
