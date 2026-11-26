@@ -1858,3 +1858,240 @@ button:disabled {
     width: 100%;
   }
 }
+
+/* FORM HINT */
+.form-hint {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* TODAY'S CLASSES */
+.form-hint {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* MODULE COLOUR SYSTEM */
+.class-colour-0 {
+  --class-colour: #4f46e5;
+  --class-background: #eef2ff;
+}
+
+.class-colour-1 {
+  --class-colour: #2563eb;
+  --class-background: #eff6ff;
+}
+
+.class-colour-2 {
+  --class-colour: #16a34a;
+  --class-background: #f0fdf4;
+}
+
+.class-colour-3 {
+  --class-colour: #ea580c;
+  --class-background: #fff7ed;
+}
+
+.class-colour-4 {
+  --class-colour: #9333ea;
+  --class-background: #faf5ff;
+}
+
+.class-colour-5 {
+  --class-colour: #db2777;
+  --class-background: #fdf2f8;
+}
+
+/* CLASS CARD */
+.class-card {
+  min-width: 0;
+  background: var(--class-background, var(--surface));
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--class-colour, var(--primary));
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.class-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.class-code {
+  color: var(--class-colour);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.class-actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.class-actions .icon-button {
+  padding: 5px;
+}
+
+.class-module-name {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 14px;
+  overflow-wrap: anywhere;
+}
+
+.class-module-name:hover {
+  color: var(--class-colour);
+}
+
+.class-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.class-details span {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.class-details svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ONLINE CLASS BUTTON */
+.join-class-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 12px;
+  margin-top: 16px;
+  border-radius: 6px;
+  background: var(--class-colour);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.join-class-button:hover {
+  opacity: 0.85;
+}
+
+/* WEEKLY TIMETABLE GRID */
+.timetable-scroll {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 12px;
+}
+
+.weekly-timetable {
+  display: grid;
+  grid-template-columns: repeat(
+    7,
+    minmax(185px, 1fr)
+  );
+  gap: 12px;
+  min-width: 1367px;
+}
+
+.timetable-day {
+  display: flex;
+  flex-direction: column;
+  min-height: 380px;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.timetable-current-day {
+  border-color: var(--primary);
+  background: #f8faff;
+}
+
+.timetable-day-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.timetable-day-header h3 {
+  font-size: 15px;
+}
+
+.timetable-day-header > span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.timetable-current-day .timetable-day-header {
+  background: var(--primary-light);
+}
+
+.timetable-day-header .today-badge {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.timetable-day-classes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px;
+}
+
+.no-classes {
+  padding: 24px 8px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* RESPONSIVE STYLING */
+@media (max-width: 700px) {
+  .todays-classes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .weekly-timetable {
+    grid-template-columns: repeat(
+      7,
+      minmax(200px, 1fr)
+    );
+    min-width: 1472px;
+  }
+
+  .timetable-day {
+    min-height: 300px;
+  }
+
+  .class-card {
+    padding: 12px;
+  }
+}
