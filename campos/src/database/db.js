@@ -9,3 +9,7 @@ db.version(1).stores({
   transactions: "++id, type, category, date",
   events: "++id, date, type"
 });
+
+db.version(2).stores({
+  budgets: "month"
+});

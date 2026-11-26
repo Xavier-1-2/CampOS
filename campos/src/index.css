@@ -2095,3 +2095,286 @@ button:disabled {
     padding: 12px;
   }
 }
+
+/* FINANCIAL STATISTICS */
+.financial-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.financial-section-heading h2 {
+  font-size: 18px;
+}
+
+.financial-section-heading span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.financial-income svg,
+.financial-income h2,
+.income-text {
+  color: var(--success);
+}
+
+.financial-expense svg,
+.financial-expense h2,
+.expense-text {
+  color: var(--danger);
+}
+
+.financial-income h2,
+.financial-expense h2 {
+  overflow-wrap: anywhere;
+}
+
+.budget-month-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 28px 0 20px;
+}
+
+.budget-month-toolbar h2 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.budget-month-toolbar p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.budget-month-toolbar .form-group {
+  margin-bottom: 0;
+}
+
+/* MONTHLY BUDGET */
+.budget-limit-form {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.budget-healthy {
+  --budget-colour: #16a34a;
+  --budget-background: #dcfce7;
+}
+
+.budget-warning {
+  --budget-colour: #c2410c;
+  --budget-background: #ffedd5;
+}
+
+.budget-danger {
+  --budget-colour: #dc2626;
+  --budget-background: #fee2e2;
+}
+
+.budget-status {
+  padding: 20px;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.budget-progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.budget-progress-header strong {
+  font-size: 18px;
+}
+
+.budget-status-badge {
+  display: inline-flex;
+  padding: 7px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--budget-colour);
+  background: var(--budget-background);
+}
+
+.budget-progress-track {
+  height: 14px;
+  border-radius: 20px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.budget-progress-fill {
+  height: 100%;
+  border-radius: 20px;
+  background: var(--budget-colour);
+  transition: width 0.3s ease;
+}
+
+.budget-progress-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.budget-progress-footer strong {
+  color: var(--budget-colour);
+}
+
+.budget-remove-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: none;
+  background: transparent;
+  color: var(--danger);
+  font-size: 12px;
+  margin-top: 22px;
+}
+
+/* SPENDING BREAKDOWN */
+.spending-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.spending-category-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.spending-category-track {
+  height: 10px;
+  background: var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.spending-category-fill {
+  height: 100%;
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+.spending-percentage {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 7px;
+}
+
+/* TRANSACTION HISTORY */
+.transaction-filters {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.transaction-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 650px;
+  font-size: 14px;
+}
+
+.transaction-table th {
+  text-align: left;
+  padding: 14px;
+  background: var(--background);
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.transaction-table td {
+  padding: 16px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.transaction-table tbody tr:hover {
+  background: var(--background);
+}
+
+.transaction-table td:nth-child(4) {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.transaction-category {
+  display: inline-block;
+  padding: 6px 9px;
+  border-radius: 6px;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 12px;
+}
+
+.transaction-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* RESPONSIVE STYLING */
+@media (max-width: 900px) {
+  .transaction-filters {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .budget-month-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .budget-progress-header strong {
+    font-size: 16px;
+  }
+
+  .budget-status {
+    padding: 14px;
+  }
+
+  .budget-progress-footer {
+    flex-direction: column;
+  }
+
+  .budget-limit-form {
+    padding: 14px;
+  }
+
+  .spending-category-header {
+    font-size: 13px;
+  }
+}
