@@ -2,18 +2,18 @@ import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 
+
 import {
   ArrowLeft,
   ClipboardList,
   GraduationCap,
   UserRound,
-  Calculator,
   FolderOpen,
   Plus
 } from "lucide-react";
 
 import { db } from "../database/db";
-
+import GradeCalculator from "../components/GradeCalculator";
 import {
   deleteAssessment
 } from "../database/assessmentService";
@@ -250,20 +250,10 @@ function ModuleDetails() {
         />
       </div>
 
-      <div className="workspace-panel">
-        <Calculator size={24} />
-
-        <h2>What-If Grade Calculator</h2>
-
-        <p>
-          Calculate the grades needed to achieve
-          your desired final result.
-        </p>
-
-        <span className="coming-soon">
-          Next Development Phase
-        </span>
-      </div>
+        <GradeCalculator
+        key={moduleId}
+        assessments={assessments}
+        />
 
       <div className="workspace-panel">
         <FolderOpen size={24} />
