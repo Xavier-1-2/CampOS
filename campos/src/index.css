@@ -1459,3 +1459,402 @@ button:disabled {
     margin-left: 46px;
   }
 }
+
+/* EMERGENCY PAGE HEADING  */
+.emergency-page-heading {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.emergency-heading-icon {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  background: #fee2e2;
+  color: var(--danger);
+  border-radius: 16px;
+  flex-shrink: 0;
+}
+
+.emergency-page-heading h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.emergency-page-heading p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* WORKLOAD STATUS BANNER */
+.emergency-status {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 28px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.emergency-status-icon {
+  flex-shrink: 0;
+}
+
+.emergency-status-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.emergency-status h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.emergency-status p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.emergency-high {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #991b1b;
+}
+
+.emergency-elevated {
+  background: #fff7ed;
+  border-color: #fed7aa;
+  color: #9a3412;
+}
+
+.emergency-manageable {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #1e40af;
+}
+
+.emergency-clear {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+  color: #166534;
+}
+
+/* EMERGENCY STATISTICS */
+.emergency-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.emergency-stats-grid .stat-card {
+  padding: 20px;
+}
+
+/* IMMEDIATE FOCUS SECTION */
+.focus-recommendation {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #92400e;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.focus-recommendation > svg {
+  flex-shrink: 0;
+}
+
+.focus-recommendation strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.focus-recommendation p {
+  color: inherit;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.focus-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+/* PERSONALIZED RECCOMENDATION  */
+.recommendation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.recommendation-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--background);
+}
+
+.recommendation-number {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.recommendation-card h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.recommendation-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* RECOVERY TIMELINE */
+.recovery-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.recovery-day {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.recovery-today {
+  background: #f8faff;
+  border-color: #c7d2fe;
+}
+
+.recovery-day-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.recovery-day-number {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  background: var(--primary-light);
+  color: var(--primary);
+  border-radius: 8px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.recovery-day-heading h3 {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.recovery-day-heading span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.recovery-day-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+/* RECOVERY TASKS CARDS */
+.recovery-task {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  transition: border-color 0.2s;
+}
+
+.recovery-task:hover {
+  border-color: var(--primary);
+}
+
+.recovery-task-info {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  flex: 1;
+  min-width: 0;
+}
+
+.recovery-task-info strong {
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.recovery-task-action {
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.recovery-task-meta {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.recovery-task > svg {
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.recovery-free-day {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.recovery-free-day svg {
+  color: var(--success);
+  flex-shrink: 0;
+}
+
+.later-tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.later-tasks h3 {
+  font-size: 18px;
+}
+
+.later-tasks p {
+  margin-bottom: 4px;
+}
+
+/* EMPTY STATE AND DISCLAIMER */
+.emergency-empty > svg {
+  color: var(--success);
+}
+
+.emergency-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 18px;
+  background: var(--primary-light);
+  color: var(--primary);
+  border-radius: 10px;
+}
+
+.emergency-disclaimer svg {
+  flex-shrink: 0;
+}
+
+.emergency-disclaimer p {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* RESPONSIVE STYLING */
+@media (max-width: 1100px) {
+  .emergency-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .recovery-day {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 700px) {
+  .emergency-page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .emergency-page-heading h1 {
+    font-size: 24px;
+  }
+
+  .emergency-status {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .emergency-status h2 {
+    font-size: 20px;
+  }
+
+  .emergency-stats-grid {
+    gap: 10px;
+  }
+
+  .emergency-stats-grid .stat-card {
+    padding: 14px;
+  }
+
+  .emergency-stats-grid .stat-card h2 {
+    font-size: 24px;
+  }
+
+  .recovery-day {
+    padding: 14px;
+  }
+
+  .recovery-task {
+    flex-wrap: wrap;
+  }
+
+  .recovery-task-info {
+    flex-basis: 100%;
+  }
+
+  .recommendation-card {
+    padding: 14px;
+  }
+
+  .focus-footer .secondary-button {
+    width: 100%;
+  }
+}

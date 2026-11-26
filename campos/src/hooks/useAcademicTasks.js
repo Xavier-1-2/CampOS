@@ -48,9 +48,11 @@ export function useAcademicTasks() {
   const stats = calculateTaskStats(tasks);
 
   return {
-    tasks,
-    stats,
-    modules,
-    loading: data === undefined
-  };
+  tasks,
+  stats,
+  modules,
+  currentDate,
+  loading: data === undefined
+};
+
 }
