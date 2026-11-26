@@ -97,3 +97,29 @@ export async function updateAssessment(id, data) {
 export async function deleteAssessment(id) {
   return db.assessments.delete(id);
 }
+
+export async function markAssessmentSubmitted(id) {
+  return db.transaction(
+    "rw",
+    db.assessments,
+    async () => {
+      const assessment =
+        await db.assessments.get(id);
+
+      if (!assessment) {
+        throw new Error("Assessment not found.");
+      }
+
+      if (assessment.status !== "Pending") {
+        throw new Error(
+          "Only pending assessments can be marked as submitted."
+        );
+      }
+
+      return db.assessments.update(id, {
+        status: "Submitted",
+        grade: null
+      });
+    }
+  );
+}

@@ -6,7 +6,8 @@ import {
   Clock,
   Wallet,
   Siren,
-  GraduationCap
+  GraduationCap,
+  ClipboardList
 } from "lucide-react";
 
 const navigation = [
@@ -20,6 +21,12 @@ const navigation = [
     path: "/modules",
     icon: BookOpen
   },
+  
+  {
+  name: "Academic Tasks",
+  path: "/tasks",
+  icon: ClipboardList
+},
   {
     name: "Timetable",
     path: "/timetable",

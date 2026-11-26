@@ -7,6 +7,9 @@ import {
   Siren
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import {
+  useAcademicTasks
+} from "../hooks/useAcademicTasks";
 
 function Dashboard() {
   const modules = useLiveQuery(
@@ -39,6 +42,11 @@ function Dashboard() {
     0
   );
 
+  const { tasks, loading: tasksLoading } =
+  useAcademicTasks();
+
+  const topTasks = tasks.slice(0, 3);
+
   return (
     <div>
       <div className="page-heading">
@@ -70,6 +78,74 @@ function Dashboard() {
           </h2>
         </div>
       </div>
+
+      <div className="workspace-panel">
+  <div className="section-toolbar">
+    <div>
+      <h2>Priority Tasks</h2>
+
+      <p>
+        Your most important upcoming
+        academic responsibilities.
+      </p>
+    </div>
+
+    <Link
+      to="/tasks"
+      className="secondary-button"
+    >
+      View All Tasks
+    </Link>
+  </div>
+
+  {tasksLoading ? (
+    <p>Loading tasks...</p>
+  ) : topTasks.length > 0 ? (
+    <div className="dashboard-task-list">
+      {topTasks.map((task, index) => (
+        <Link
+          to={`/modules/${task.moduleId}`}
+          className="dashboard-task"
+          key={task.id}
+        >
+          <div className="dashboard-task-rank">
+            {index + 1}
+          </div>
+
+          <div className="dashboard-task-info">
+            <strong>{task.name}</strong>
+
+            <span>
+              {task.moduleCode} ·{" "}
+              {task.deadlineLabel} ·{" "}
+              {task.weight}% Weight
+            </span>
+          </div>
+
+          <span
+            className={
+              `priority-badge priority-` +
+              task.priorityLevel.toLowerCase()
+            }
+          >
+            {task.priorityLevel}
+          </span>
+        </Link>
+      ))}
+    </div>
+  ) : (
+    <div className="empty-state">
+      <ClipboardList size={36} />
+
+      <h2>No pending tasks</h2>
+
+      <p>
+        Add assessments to your modules
+        to generate your academic task list.
+      </p>
+    </div>
+  )}
+</div>
 
       <div className="emergency-banner">
         <div>

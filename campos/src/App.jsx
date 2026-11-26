@@ -13,6 +13,7 @@ import Timetable from "./pages/Timetable";
 import Calendar from "./pages/Calendar";
 import Budget from "./pages/Budget";
 import Emergency from "./pages/Emergency";
+import Tasks from "./pages/Tasks";
 
 function App() {
   return (
@@ -30,6 +31,8 @@ function App() {
             path="modules/:id"
             element={<ModuleDetails />}
           />
+
+          <Route path="tasks" element={<Tasks />} />
 
           <Route
             path="timetable"

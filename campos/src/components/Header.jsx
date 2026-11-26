@@ -8,7 +8,8 @@ const pageTitles = {
   "/timetable": "Timetable",
   "/calendar": "Academic Calendar",
   "/budget": "Budget Tracking",
-  "/emergency": "Academic Emergency"
+  "/emergency": "Academic Emergency",
+  "/tasks": "Academic Tasks",
 };
 
 function Header() {
