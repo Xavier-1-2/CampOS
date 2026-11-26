@@ -5,6 +5,11 @@ Tech Stack: Frontend (ReactJs), Backend/Storage(IndexedDB)
 Project Description: CampOS is a university management system created for students to better organize their academic and financial activities
 
 Features
-- Module Managment: storing and managing modules and assesments
+- Module Managment: Storing and managing modules and assesments
 - What-If Calculator: Calculates how much percentage you need to get a certain grade
+- Emergency Mode: generates a personalized action plan for overwhelmed students by identifying and prioritising their most urgent and academically significant responsibilities based on metrics like (due date vs current date, grade weight) 
+- Budget Tracking: Tracking income, expenses, spending categories and remaining budgets throughout the semester
+- Dashboard: overview of student's academic performance, upcoming responsibilities, class schedules and financial status
+- Calendar:Automatically displays upcoming assignments, examinations, classes and important academic events.
+- Timetable: Custom Timetable based on your modules
 
