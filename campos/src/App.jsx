@@ -8,6 +8,7 @@ import Layout from "./components/Layout";
 
 import Dashboard from "./pages/Dashboard";
 import Modules from "./pages/Modules";
+import ModuleDetails from "./pages/ModuleDetails";
 import Timetable from "./pages/Timetable";
 import Calendar from "./pages/Calendar";
 import Budget from "./pages/Budget";
@@ -23,6 +24,11 @@ function App() {
           <Route
             path="modules"
             element={<Modules />}
+          />
+
+          <Route
+            path="modules/:id"
+            element={<ModuleDetails />}
           />
 
           <Route

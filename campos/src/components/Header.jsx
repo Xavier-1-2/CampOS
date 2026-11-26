@@ -14,8 +14,9 @@ const pageTitles = {
 function Header() {
   const location = useLocation();
 
-  const title =
-    pageTitles[location.pathname] || "CampOS";
+  const title = location.pathname.startsWith("/modules/")
+  ? "Module Workspace"
+  : pageTitles[location.pathname] || "CampOS";
 
   return (
     <header className="header">
